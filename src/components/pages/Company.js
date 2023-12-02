@@ -1,6 +1,7 @@
+import styles from "../styles/Container.module.css"
 function Company(){
     return(
-        <div>
+        <div className={styles.minH}>
             <h1>
                 Company
             </h1>

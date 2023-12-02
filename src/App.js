@@ -10,13 +10,13 @@ import NewProject from "./components/pages/NewProject";
 import Projects from "./components/pages/Projects";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-
+import styles from "./components/styles/Container.module.css"
 import Container from "./components/layout/Container";
 function App() {  
   return (
     <Router>
         <Navbar/>
-        <Container>
+        <Container className={styles.minH}>
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/projects" element={<Projects/>} />

@@ -1,14 +1,26 @@
 {
   "projects": [
     {
-      "name": "teste",
-      "budget": "5000",
+      "name": "teste1",
+      "budget": "13",
       "category": {
-        "id": "2"
+        "id": "2",
+        "name": "Desenvolvimento"
       },
       "banks": 0,
       "services": [],
       "id": 1
+    },
+    {
+      "name": "teste",
+      "budget": "7777",
+      "category": {
+        "id": "3",
+        "name": "Desing"
+      },
+      "banks": 0,
+      "services": [],
+      "id": 2
     }
   ],
   "categories": [
@@ -23,6 +35,10 @@
     {
       "id": 3,
       "name": "Desing"
+    },
+    {
+      "id": 4,
+      "name": "Planejamento"
     }
   ]
 }

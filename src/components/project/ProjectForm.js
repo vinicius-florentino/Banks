@@ -9,7 +9,7 @@ function ProjectForm( {handleSubmit, btnText, projectData} ){
     const [categories, setCategories] = useState([])
     const [project, setProject] = useState(projectData || {})
 
-    useEffect(() => {
+      useEffect(() => {
         fetch("http://localhost:5000/categories", {
           method: "GET",
           headers: {
@@ -23,9 +23,9 @@ function ProjectForm( {handleSubmit, btnText, projectData} ){
           .catch((err) => console.log(err));
       }, []);
 
-      const submit =(e)=>{
+      const submit =(e)=>{  
         e.preventDefault()
-        // console.log(project)
+        console.log(project)
         handleSubmit(project)
       }
 
@@ -39,7 +39,7 @@ function ProjectForm( {handleSubmit, btnText, projectData} ){
         setProject({
           ...project, category:{
             id: e.target.value,
-            name: e.target.options[e.target.selectIndex]
+            name: e.target.options[e.target.selectedIndex].text
           },
         })
       }

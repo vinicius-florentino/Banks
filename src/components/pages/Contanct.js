@@ -1,8 +1,9 @@
+import styles from "../styles/Container.module.css"
 function Contact(){
     return(
-        <div>
+        <div className={styles.minH}>
             <h1>
-            Contact
+                Contact
             </h1>
         </div>
     )
