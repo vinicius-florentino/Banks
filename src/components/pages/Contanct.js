@@ -1,4 +1,4 @@
-import styles from "../styles/Container.module.css"
+import styles from "../styles/Container.module.css";
 function Contact(){
     return(
         <div className={styles.minH}>

@@ -1,7 +1,7 @@
 import {FaFacebook} from 'react-icons/fa6';
 import {FaInstagram} from 'react-icons/fa6';
 import {FaSquareTwitter} from 'react-icons/fa6';
-import styles from '../styles/Footer.module.css'
+import styles from '../styles/Footer.module.css';
 function Footer(){
     return( 
         <footer className={styles.footer}>

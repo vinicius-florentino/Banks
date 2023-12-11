@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react'
-
-import styles from '../styles/ProjectForm.module.css'
-import Input from '../form/Input'
-import Select from '../form/Select'
-import SubmitButton from '../form/SubmitButton'
+import { useState, useEffect } from 'react';
+import styles from '../styles/ProjectForm.module.css';
+import Input from '../form/Input';
+import Select from '../form/Select';
+import SubmitButton from '../form/SubmitButton';
 
 function ProjectForm( {handleSubmit, btnText, projectData} ){
-    const [categories, setCategories] = useState([])
-    const [project, setProject] = useState(projectData || {})
+      const [categories, setCategories] = useState([])
+      const [project, setProject] = useState(projectData || {})
 
       useEffect(() => {
         fetch("http://localhost:5000/categories", {
@@ -25,7 +24,6 @@ function ProjectForm( {handleSubmit, btnText, projectData} ){
 
       const submit =(e)=>{  
         e.preventDefault()
-        console.log(project)
         handleSubmit(project)
       }
 
