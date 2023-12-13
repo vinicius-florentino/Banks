@@ -1,9 +1,10 @@
 import styles from '../styles/Home.module.css';
 import savings from '../../img/savings.svg';
 import LinkButton from '../layout/LinkButton';
+import stylesContainer from "../styles/Container.module.css";
 function Home(){
     return(
-       <section className={styles.homecontainer}>    
+       <section className={`${styles.homecontainer} ${stylesContainer.minH}`}> 
             <h1>
                 Bem vindo ao <span>Banks</span>
             </h1>

@@ -1,7 +1,7 @@
-import styles from "../styles/Container.module.css";
+import stylesContainer from "../styles/Container.module.css";
 function Company(){
     return(
-        <div className={styles.minH}>
+        <div className={stylesContainer.minH}>
             <h1>
                 Company
             </h1>

@@ -1,5 +1,6 @@
 import ProjectForm from '../project/ProjectForm';
 import styles from '../styles/NewProject.module.css';
+import stylesContainer from "../styles/Container.module.css";
 import { useNavigate } from 'react-router-dom';
 
 function NewProject(){
@@ -25,7 +26,7 @@ function NewProject(){
     }
 
     return(
-        <div className={styles.newproject_container}>
+        <div className={`${styles.newproject_container} ${stylesContainer.minH}`}>
             <h1>
                 Criar Projeto   
             </h1>

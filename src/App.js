@@ -10,6 +10,7 @@ import NewProject from "./components/pages/NewProject";
 import Projects from "./components/pages/Projects";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import ProjectEdit from "./components/pages/projectEdit";
 import styles from "./components/styles/Container.module.css"
 import Container from "./components/layout/Container";
 function App() {  
@@ -23,6 +24,7 @@ function App() {
             <Route path="/company" element={<Company />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/newproject" element={<NewProject />} />
+            <Route path="/projectEdit/:id" element={<ProjectEdit />} />
           </Routes>
         </Container>
         <Footer/>

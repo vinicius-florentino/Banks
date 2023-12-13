@@ -1,0 +1,8 @@
+.projectcontainer{
+    padding-top: 2em;
+}
+.titlecontainer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}

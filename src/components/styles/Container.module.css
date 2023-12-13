@@ -7,7 +7,7 @@
 }   
 
 .minH{
-    min-height: 715px;
+    min-height: 700px;
 }
 
 .start {
@@ -17,4 +17,9 @@
 .column {
     flex-direction: column;
     justify-content: flex-start;
+}
+.projectEditdetails{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

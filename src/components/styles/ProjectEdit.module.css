@@ -1,0 +1,43 @@
+.projectdetails{
+    padding: 2em;
+}
+.projectdetails h1,
+.projectdetails h2,
+.projectdetails p{
+    margin-bottom: .5em;
+}
+
+.projectdetails h1{
+    background-color: #222;
+    color: #fb3;
+    padding: .4em;
+}
+
+.projectdetails p span {
+    font-weight: bold;
+}
+
+.detailscontainer, 
+.serviceformcontainer {
+    border-bottom: 1px solid #7a7a7a;
+    margin-bottom: 1.2em;
+    padding-bottom: 1.2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 1200px;
+}
+
+.btn{
+    background-color: #222;
+    color: #fff;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: 0.5s;
+    cursor: pointer;
+    border: none;
+    height: 69px;
+}
+.btn:hover{
+    color: #fb3;
+}
