@@ -1,7 +1,9 @@
 import Loading from "../layout/Loading"
 import Container from "../layout/Container"
+import ProjectForm from "../project/ProjectForm";
 import styles from "../styles/ProjectEdit.module.css"
 import stylesContainer from "../styles/Container.module.css";
+import Message from "../layout/Message";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 function ProjectEdit(){
@@ -9,6 +11,8 @@ function ProjectEdit(){
     const {id} = useParams()
     const [project, setProject] = useState([])
     const [showProjectForm, setShowProjectForm] = useState(true)
+    const [message, setMessage] = useState()
+    const [type, setType] = useState()
 
     useEffect(()=>{
         setTimeout(() =>{
@@ -29,11 +33,36 @@ function ProjectEdit(){
         setShowProjectForm(!showProjectForm)
     }
 
+    function editProject(project){
+        
+        if(project.budget < project.banks){
+            setMessage("Orçamento menor que o custo do projeto")
+            setType('error')
+            return false
+        }
+        fetch(`http://localhost:5000/projects/${id}`,{
+            method: 'PATCH',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(project),
+        }).then(resp => resp.json())
+          .then((data)=>{
+
+            setProject(data)
+            setShowProjectForm(!setShowProjectForm)
+            setMessage("Projeto atualizado com sucesso")
+            setType('success')
+          })
+          .catch(err => console.log(err))
+    }
+
     return( 
         <>
         {project.name ? (
             <div className={`${stylesContainer.minH} ${styles.projectdetails}`} >
                 <Container customClasse="column">
+                    {message && <Message type={type} msg={message} />}
                     <div>
                         <div className={stylesContainer.projectEditdetails}>
                             <div className={styles.detailscontainer}>
@@ -56,9 +85,7 @@ function ProjectEdit(){
                             )
                             :(
                                 <div>
-                                    <p>
-                                        Detalhes do projeto
-                                    </p>
+                                    <ProjectForm handleSubmit={editProject} btnText="Concluir edição" projectData={project} />
                                 </div>
                             )
                         }
