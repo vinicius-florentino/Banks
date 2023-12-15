@@ -27,6 +27,14 @@
     justify-content: space-between;
     width: 1200px;
 }
+.serviceformcontainer h2{
+    margin-top: 20px;
+}
+.serviceformcontainer nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
 
 .btn{
     background-color: #222;

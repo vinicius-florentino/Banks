@@ -2,7 +2,7 @@
   "projects": [
     {
       "name": "teste update",
-      "budget": "10000",
+      "budget": "10",
       "category": {
         "id": "3",
         "name": "Design"

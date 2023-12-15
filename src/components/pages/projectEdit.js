@@ -10,10 +10,10 @@ function ProjectEdit(){
 
     const {id} = useParams()
     const [project, setProject] = useState([])
-    const [showProjectForm, setShowProjectForm] = useState(true)
+    const [showProjectForm, setShowProjectForm] = useState(false)
+    const [showServiceForm, setShowServiceForm] = useState(false)
     const [message, setMessage] = useState()
     const [type, setType] = useState()
-
     useEffect(()=>{
         setTimeout(() =>{
             fetch(`http://localhost:5000/projects/${id}`,{
@@ -32,9 +32,15 @@ function ProjectEdit(){
     function toggleProjectForm(){
         setShowProjectForm(!showProjectForm)
     }
+    
+    function toggleServiceForm(){
+        setShowServiceForm(!showServiceForm)
+    }
 
     function editProject(project){
-        
+
+        setMessage('')
+
         if(project.budget < project.banks){
             setMessage("Orçamento menor que o custo do projeto")
             setType('error')
@@ -68,29 +74,54 @@ function ProjectEdit(){
                             <div className={styles.detailscontainer}>
                                 <h1>{project.name}</h1>
                                 <button onClick={toggleProjectForm} className={styles.btn}>
-                                    {showProjectForm 
-                                        ? 'Editar projeto'
-                                        : 'Fechar projeto'
-                                    }
+                                    {showProjectForm ? 'Fechar projeto':'Editar projeto' }
                                 </button>
                             </div>
                         </div>
-                        {showProjectForm
+                        {!showProjectForm
                             ?(
                                 <div>
-                                    <p> <span> Categoria: </span> {project.category.name} </p>
+                                    <p> <span>Categoria: </span> {project.category.name} </p>
                                     <p> <span>Total do orçamento: </span> R${project.budget} </p>
                                     <p> <span>Total utiliazdo: </span> R${project.banks} </p>
                                 </div>
                             )
                             :(
                                 <div>
-                                    <ProjectForm handleSubmit={editProject} btnText="Concluir edição" projectData={project} />
+                                    <ProjectForm 
+                                        handleSubmit={editProject}
+                                        btnText="Concluir edição" 
+                                        projectData={project} />
                                 </div>
                             )
                         }
                     </div>
-                </Container>
+                    <div className={styles.serviceformcontainer}>
+                        <nav>
+                            <h2>
+                                Adicione um serviço
+                            </h2>
+                            <button onClick={toggleServiceForm} className={styles.btn}>
+                                {showServiceForm ? 'Fechar serviços': 'Adicionar serviço' }
+                            </button>
+                        </nav>
+                        <div>
+                            {showServiceForm &&(
+                                <div className={stylesContainer.projectEditdetails}>
+                                    Formulário do serviço
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                    <h2>
+                        Serviços
+                    </h2>
+                    <Container customClasse="start">
+                        <p>
+                            Itens de serviços
+                        </p>
+                    </Container>
+                </Container>    
             </div>
         ) :(
           <Loading />
