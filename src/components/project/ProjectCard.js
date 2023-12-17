@@ -21,7 +21,7 @@ function ProjectCard({id, name, budget, category, handleRemove}){
                 R${budget}
             </p>
             <p className={styles.categorytext}>
-                <span classN    ame={`${styles[category.name.toLowerCase()]}`}>
+                <span className={`${styles[category.name.toLowerCase()]}`}>
                 </span>
                 {category.name}
             </p>

@@ -2,25 +2,33 @@
   "projects": [
     {
       "name": "teste update",
-      "budget": "10",
+      "budget": "9999",
       "category": {
         "id": "3",
         "name": "Design"
       },
-      "banks": 0,
-      "services": [],
+      "banks": 2910,
+      "services": [
+        {
+          "name": "teste",
+          "banks": "722",
+          "description": "sadadas",
+          "id": "44b61eb0-823e-4cec-9791-e0deea071b8a"
+        },
+        {
+          "name": "teste",
+          "banks": "10",
+          "description": "sadadas",
+          "id": "f9fde7ba-15cb-4155-a77a-7ab855e796e9"
+        },
+        {
+          "name": "vini",
+          "banks": "1000",
+          "description": "11",
+          "id": "0aec3b64-868f-4a1d-8b64-5abde65d2728"
+        }
+      ],
       "id": 1
-    },
-    {
-      "name": "teste denovo",
-      "budget": "1000",
-      "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "banks": 0,
-      "services": [],
-      "id": 2
     }
   ],
   "categories": [
